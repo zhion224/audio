@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WiFi Auto Connect</title>
+    <script>
+        function connectWiFi() {
+            var ssid = "YOUR_WIFI_SSID";  // 와이파이 SSID 입력
+            var password = "YOUR_WIFI_PASSWORD";  // 와이파이 비밀번호 입력
+            var wifiURL = "WIFI:T:WPA;S:" + ssid + ";P:" + password + ";;";
+
+            // WiFi 연결을 위한 QR 코드 자동 실행 (일부 브라우저에서는 제한될 수 있음)
+            window.location.href = wifiURL;
+        }
+
+        function redirectToLink() {
+            setTimeout(function() {
+                window.location.href = "https://your-link.com";  // 이동할 링크 입력
+            }, 3000);  // 3초 후 이동
+        }
+
+        window.onload = function() {
+            connectWiFi();
+            redirectToLink();
+        }
+    </script>
+</head>
+<body>
+    <h1>WiFi 연결 중...</h1>
+    <p>잠시 후 자동으로 페이지가 이동합니다.</p>
+</body>
+</html>
